@@ -332,7 +332,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73957X4WTT;
-				HEADER_SEARCH_PATHS = "$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers",
+					"$(SRCROOT)/../../../../ios/Pods/Headers/Public/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -345,7 +348,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73957X4WTT;
-				HEADER_SEARCH_PATHS = "$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers",
+					"$(SRCROOT)/../../../../ios/Pods/Headers/Public/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
