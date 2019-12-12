@@ -99,6 +99,7 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
         self->currentGstState = -1;
     }
     
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInactiveState) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBackgroundState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onActiveState) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -188,7 +189,9 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
     NSLog(@"%@ - Surface changed %p", [self getTag], self);
     
     if (self->playerReady) {
-        g_object_set(self->rct_gst_player, "drawable_surface", self, NULL);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            g_object_set(self->rct_gst_player, "drawable_surface", self, NULL);
+        })
     }
 }
 
