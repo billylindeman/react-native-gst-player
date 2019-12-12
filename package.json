@@ -3,9 +3,30 @@
   "version": "1.0.0",
   "description": "Universal video/audio player based on GStreamer native library",
   "main": "index.js",
-  "author": "Alann Sapone",
+  "contributors": [
+    {
+      "name": "Alann Sapone",
+      "url": "https://github.com/devoluti0n"
+    },
+    {
+      "name": "Billy Lindeman",
+      "email": "billy@quartz.co",
+      "url": "https://github.com/billylindeman"
+    }
+  ],
   "license": "MIT",
+  "prettier": {
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "peerDependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
