@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "9.0" }
   s.source       = { :git => "https://github.com/quartzco/react-native-gst-player.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,swift}"
+  s.source_files = "{ios,native}/**/*.{h,m,swift,c}"
   s.requires_arc = true
 
   s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers"' }
