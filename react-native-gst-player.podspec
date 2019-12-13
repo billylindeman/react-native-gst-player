@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers"' }
-  s.vendored_frameworks = '~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework'
+  # s.vendored_frameworks = '~/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework'
 
   s.dependency "React"
 
