@@ -191,7 +191,7 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
     if (self->playerReady) {
         dispatch_async(dispatch_get_main_queue(), ^{
             g_object_set(self->rct_gst_player, "drawable_surface", self, NULL);
-        })
+        });
     }
 }
 
