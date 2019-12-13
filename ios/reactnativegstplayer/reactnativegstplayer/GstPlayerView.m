@@ -97,8 +97,11 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
         self->playerIndex = playerIndex;
         self->playerReady = false;
         self->currentGstState = -1;
+        
+        CAEAGLLayer *layer = (CAEAGLLayer*)self.layer;
+        layer.opaque = true;
+        layer.zPosition = 999;
     }
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInactiveState) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBackgroundState) name:UIApplicationDidEnterBackgroundNotification object:nil];
