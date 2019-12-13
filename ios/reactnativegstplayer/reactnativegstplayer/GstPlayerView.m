@@ -172,7 +172,7 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
 
 - (void)willMoveToWindow:(UIWindow *)newWindow
 {
-    if (newWindow != nil) {
+    if (newWindow != nil && self->rct_gst_player == nil) {
         const gchar *debug_tag = [[self getNativeTag] UTF8String];
         self->rct_gst_player = rct_gst_player_new(debug_tag,
                                                   cb_on_gst_player_loaded,
