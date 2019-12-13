@@ -318,6 +318,9 @@ static gpointer rct_gst_player_run_thread(gpointer data) {
 
 // Thread public starting point
 void rct_gst_player_start(RctGstPlayer *self) {
+    if(self->thread != NULL) {
+        g_print("%s : Cannot start a new player thread when one already exists!", self->debug_tag);
+    }
     self->thread = g_thread_new("player_thread", rct_gst_player_run_thread, self);
 }
 

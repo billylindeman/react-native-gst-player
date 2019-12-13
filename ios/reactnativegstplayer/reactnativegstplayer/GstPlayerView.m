@@ -172,16 +172,18 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
 
 - (void)willMoveToWindow:(UIWindow *)newWindow
 {
-    const gchar *debug_tag = [[self getNativeTag] UTF8String];
-    self->rct_gst_player = rct_gst_player_new(debug_tag,
-                                              cb_on_gst_player_loaded,
-                                              cb_on_gst_pipeline_state_changed,
-                                              cb_on_gst_pipeline_eos,
-                                              cb_on_gst_pipeline_error,
-                                              cb_on_gst_element_message,
-                                              (__bridge gpointer)self);
-    
-    rct_gst_player_start(self->rct_gst_player);
+    if (newWindow != nil) {
+        const gchar *debug_tag = [[self getNativeTag] UTF8String];
+        self->rct_gst_player = rct_gst_player_new(debug_tag,
+                                                  cb_on_gst_player_loaded,
+                                                  cb_on_gst_pipeline_state_changed,
+                                                  cb_on_gst_pipeline_eos,
+                                                  cb_on_gst_pipeline_error,
+                                                  cb_on_gst_element_message,
+                                                  (__bridge gpointer)self);
+        
+        rct_gst_player_start(self->rct_gst_player);
+    }
 
     [super willMoveToWindow:newWindow];
 }
@@ -197,6 +199,7 @@ static void cb_on_gst_element_message(RctGstPlayer *gst_player,
         });
     }
 }
+
 
 - (void)removeFromSuperview
 {
