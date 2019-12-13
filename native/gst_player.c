@@ -323,6 +323,7 @@ void rct_gst_player_start(RctGstPlayer *self) {
 
 void rct_gst_player_stop(RctGstPlayer *self) {
     g_main_loop_quit(self->loop);
+    g_thread_join(self->thread);
 }
 
 // Setters
